@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我把博客做成了一个文件夹 · 杨卓群</title>
+<meta name="description" content="没有数据库，没有后台，没有运行时。聊聊这个纯静态博客是怎么构建、怎么部署的。">
+<meta name="author" content="杨卓群">
+<link rel="canonical" href="https://blog.yangzhuoqun.is-a.dev/posts/static-blog/">
+<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1113" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我把博客做成了一个文件夹 · 杨卓群">
+<meta property="og:description" content="没有数据库，没有后台，没有运行时。聊聊这个纯静态博客是怎么构建、怎么部署的。">
+<meta property="og:url" content="https://blog.yangzhuoqun.is-a.dev/posts/static-blog/">
+<meta property="og:site_name" content="杨卓群">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我把博客做成了一个文件夹 · 杨卓群">
+<meta name="twitter:description" content="没有数据库，没有后台，没有运行时。聊聊这个纯静态博客是怎么构建、怎么部署的。">
+<meta property="article:published_time" content="2026-10-21T12:00:00.000Z">
+<meta property="article:author" content="杨卓群">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="杨卓群" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.setAttribute("data-theme",d?"dark":"light");}catch(e){}})();</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"我把博客做成了一个文件夹","description":"没有数据库，没有后台，没有运行时。聊聊这个纯静态博客是怎么构建、怎么部署的。","datePublished":"2026-10-21T12:00:00.000Z","dateModified":"2026-10-21T12:00:00.000Z","author":{"@type":"Person","name":"杨卓群"},"publisher":{"@type":"Person","name":"杨卓群"},"mainEntityOfPage":"https://blog.yangzhuoqun.is-a.dev/posts/static-blog/","inLanguage":"zh-CN","keywords":"技术, 前端"}</script>
+</head>
+<body class="page-post">
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="杨卓群，返回首页">
+      <span class="brand-mark" aria-hidden="true">杨</span>
+      <span class="brand-text"><strong>杨卓群</strong><small>YANG ZHUOQUN</small></span>
+    </a>
+    <nav class="site-nav" aria-label="主导航"><a href="/" aria-current="page">文章</a><a href="/archive/">归档</a><a href="/tags/">标签</a><a href="/about/">关于</a></nav>
+    <div class="header-actions">
+      <button class="icon-btn search-btn" id="search-open" type="button" aria-label="搜索文章" aria-haspopup="dialog">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m16 16 4.2 4.2"/></svg><kbd class="kbd">⌘K</kbd>
+      </button>
+      <button class="icon-btn theme-btn" id="theme-toggle" type="button" aria-label="切换深浅色">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5l-1.5 1.5M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5"/></svg><svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 14.6A8.6 8.6 0 1 1 9.4 3.6a6.9 6.9 0 0 0 11 11Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="reading-progress" aria-hidden="true"><span id="reading-bar"></span></div>
+<article class="post">
+  <header class="post-header wrap-narrow">
+    <p class="post-eyebrow reveal"><a href="/">← 文章列表</a></p>
+    <h1 class="post-heading reveal">我把博客做成了一个文件夹</h1>
+    <p class="post-subtitle reveal">没有数据库，没有后台，没有运行时。聊聊这个纯静态博客是怎么构建、怎么部署的。</p>
+    <div class="post-meta reveal">
+      <time datetime="2026-10-21T12:00:00.000Z">2026 年 10 月 21 日</time>
+      <span class="meta-dot" aria-hidden="true">·</span>
+      <span>约 2 分钟</span>
+      <span class="meta-dot" aria-hidden="true">·</span><span class="post-meta-tags"><a class="tag" href="/tags/tech/">技术</a><a class="tag" href="/tags/frontend/">前端</a></span>
+    </div>
+  </header>
+  <div class="post-layout wrap">
+    <details class="post-toc-mobile">
+  <summary><span>目录</span><small>5 节</small></summary>
+  <nav><ol><li class="toc-level-2"><a href="#静态不是妥协">静态不是妥协</a></li><li class="toc-level-2"><a href="#构建只有一条命令">构建只有一条命令</a></li><li class="toc-level-2"><a href="#内容就是文本文件">内容就是文本文件</a></li><li class="toc-level-2"><a href="#部署把-dist-放到任何地方">部署：把 dist 放到任何地方</a></li><li class="toc-level-2"><a href="#一点代价">一点代价</a></li></ol></nav>
+</details>
+    <aside class="post-toc" aria-label="文章目录">
+  <p class="toc-title">目录</p>
+  <nav><ol><li class="toc-level-2"><a href="#静态不是妥协">静态不是妥协</a></li><li class="toc-level-2"><a href="#构建只有一条命令">构建只有一条命令</a></li><li class="toc-level-2"><a href="#内容就是文本文件">内容就是文本文件</a></li><li class="toc-level-2"><a href="#部署把-dist-放到任何地方">部署：把 dist 放到任何地方</a></li><li class="toc-level-2"><a href="#一点代价">一点代价</a></li></ol></nav>
+</aside>
+    <div class="prose"><p>这个博客的全部产物，是一个叫 <code>dist</code> 的文件夹。里面有 HTML、一份 CSS、一个很小的 JavaScript 文件，以及若干文本。把它丢到任何能托管静态文件的地方，它就能工作。</p><h2 id="静态不是妥协">静态不是妥协<a class="heading-anchor" href="#静态不是妥协" aria-hidden="true" tabindex="-1">#</a></h2><p>动态博客需要服务器、数据库、运行时，还需要有人记得给它们打补丁。静态站点把这些都省掉了：请求进来，服务器返回一个早就写好的文件，结束。</p><p>这带来几个实际的好处：</p><ul><li>几乎不消耗资源，一台最小的机器能扛住很多访问；</li><li>没有登录、注入、反序列化这类攻击面；</li><li>备份就是复制文件夹；</li><li>本地打开和线上打开，看到的是同一份东西。</li></ul><p>代价也很清楚：评论、点赞、访问统计这些需要服务端的功能，要么接第三方，要么不要。我选择不要。</p><h2 id="构建只有一条命令">构建只有一条命令<a class="heading-anchor" href="#构建只有一条命令" aria-hidden="true" tabindex="-1">#</a></h2><div class="code-block" data-lang="bash">
+  <div class="code-head"><span class="code-lang">bash</span><button class="code-copy" type="button" aria-label="复制代码">复制</button></div>
+  <pre><code class="language-bash">node scripts/build.mjs</code></pre>
+</div><p>它按顺序做四件事：</p><ol><li>读取 <code>content/posts/</code> 下的 Markdown，解析 front matter；</li><li>渲染正文、生成目录，写出每一篇文章的 HTML；</li><li>生成首页、归档、标签页、RSS 和 sitemap；</li><li>复制静态资源，输出到 <code>dist/</code>。</li></ol><p>整个过程不联网，也没有 <code>node_modules</code>。构建脚本自己实现了一个够用的 Markdown 渲染器，所以即使几年后 npm 生态变了，这条命令大概率还是能跑。</p><h2 id="内容就是文本文件">内容就是文本文件<a class="heading-anchor" href="#内容就是文本文件" aria-hidden="true" tabindex="-1">#</a></h2><p>一篇文章长这样：</p><div class="code-block" data-lang="markdown">
+  <div class="code-head"><span class="code-lang">markdown</span><button class="code-copy" type="button" aria-label="复制代码">复制</button></div>
+  <pre><code class="language-markdown">---
+title: 文章的标题
+date: <span class="tok-num">2026</span>-<span class="tok-num">10</span>-<span class="tok-num">21</span>
+summary: 列表里显示的一句话简介。
+tags: [技术, 前端]
+---
+
+正文从这里开始。</code></pre>
+</div><p>没有后台编辑器，没有草稿箱接口。写文章就是新建一个 <code>.md</code> 文件，改完重新构建。听起来原始，但对一个更新频率不高的个人博客来说，这已经足够了。</p><h2 id="部署把-dist-放到任何地方">部署：把 dist 放到任何地方<a class="heading-anchor" href="#部署把-dist-放到任何地方" aria-hidden="true" tabindex="-1">#</a></h2><div class="table-wrap"><table><thead><tr><th style="text-align:left">方式</th><th style="text-align:left">费用</th><th style="text-align:left">说明</th></tr></thead><tbody><tr><td style="text-align:left">自己的服务器</td><td style="text-align:left">已有服务器</td><td style="text-align:left">nginx 指向 <code>dist/</code>，最自由，需要自己配 HTTPS</td></tr><tr><td style="text-align:left">GitHub Pages</td><td style="text-align:left">免费</td><td style="text-align:left">推仓库，用 Actions 构建并发布</td></tr><tr><td style="text-align:left">Netlify / Cloudflare Pages</td><td style="text-align:left">免费额度</td><td style="text-align:left">把 <code>dist/</code> 拖进去即可，适合不想碰命令行的人</td></tr></tbody></table></div><p>因为产物完全是静态的，换托管方不需要改任何代码，最多改一下域名解析。</p><aside class="callout callout-tip">
+  <p class="callout-title">小技巧</p>
+  <div class="callout-body"><p>如果只是想先看看效果，<code>python -m http.server 4173 --directory dist</code> 就够了，不需要安装任何东西。</p></div>
+</aside><h2 id="一点代价">一点代价<a class="heading-anchor" href="#一点代价" aria-hidden="true" tabindex="-1">#</a></h2><p>静态站点没有「实时」。文章发布需要重新构建，评论需要外部服务，搜索只能靠一份预先生成的 JSON 索引——这个博客的搜索就是这样做的，输入关键词，在浏览器里过滤几十篇文章，快得几乎无感。</p><p>对个人博客来说，这些限制换来的是简单。而简单，通常意味着能活得更久。</p></div>
+  </div>
+  <footer class="post-footer wrap-narrow">
+    <div class="post-end-mark" aria-hidden="true">⁂</div>
+    <div class="post-end-tags"><a class="tag" href="/tags/tech/">技术</a><a class="tag" href="/tags/frontend/">前端</a></div>
+    <nav class="post-pager" aria-label="上一篇与下一篇">
+  <a class="pager-item pager-prev" href="/posts/chinese-typography/"><span>← 上一篇</span><strong>中文网页排版，先做好这五件小事</strong></a>
+  <a class="pager-item pager-next" href="/posts/hello-world/"><span>下一篇 →</span><strong>你好，世界</strong></a>
+</nav>
+    <p class="post-back"><a href="/">← 回到首页</a></p>
+  </footer>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="copyright">© 2026 杨卓群 · 用纯静态的方式，慢慢写。</p>
+    <div class="footer-links"><a href="https://github.com/yangzhuoqun-666" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/feed.xml">RSS</a></div>
+  </div>
+</footer>
+<dialog class="search-dialog" id="search-dialog" aria-label="站内搜索">
+  <div class="search-panel">
+    <form class="search-form" role="search" onsubmit="return false">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m16 16 4.2 4.2"/></svg>
+      <input id="search-input" type="search" placeholder="搜索文章、标签……" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <button class="search-close" id="search-close" type="button">Esc</button>
+    </form>
+    <div class="search-results" id="search-results">
+      <p class="search-hint">输入关键词开始搜索，↑↓ 选择，Enter 打开。</p>
+    </div>
+  </div>
+</dialog>
+<script src="/assets/app.js" defer></script>
+</body>
+</html>
