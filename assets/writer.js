@@ -69,9 +69,7 @@ function parseTags(value) {
 function currentSlug() {
   const raw = els.slug.value.trim().toLowerCase();
   if (raw) return raw;
-  const auto = slugifyAscii(els.title.value);
-  if (auto) return auto;
-  return `post-${(els.date.value || today()).replace(/-/g, "")}`;
+  return slugifyAscii(els.title.value);
 }
 
 function validSlug(slug) {
@@ -124,6 +122,11 @@ function buildMarkdown() {
 
 function filename() {
   const slug = currentSlug();
+  if (!slug) {
+    setStatus("请先填 Slug（网址用的英文短名，例如 one-thing-a-day）。");
+    els.slug.focus();
+    return null;
+  }
   if (!validSlug(slug)) {
     setStatus("Slug 只能用小写字母、数字和连字符，例如 hello-world。");
     els.slug.focus();
