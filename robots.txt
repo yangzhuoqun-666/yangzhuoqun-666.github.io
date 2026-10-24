@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /write/
-Disallow: /source/
-
-Sitemap: https://blog.yangzhuoqun.is-a.dev/sitemap.xml
